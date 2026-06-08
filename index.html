@@ -176,6 +176,11 @@ tr:hover td{background:var(--accent-l)}
 .q-reset:hover{background:var(--danger-bg);color:var(--red);border-color:var(--red)}
 .q-tip{display:inline-block;font-size:.78em;color:var(--muted);margin-left:4px;font-style:italic}
 
+/* ===== IMAGENES DEL APUNTE ===== */
+.img-figura{margin:24px 0;text-align:center}
+.img-figura img{max-width:100%;height:auto;border:1px solid #e5e5e5;border-radius:4px}
+.img-figura figcaption{margin-top:6px;color:#888;font-size:13px}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){.hero{padding:30px 16px}.hero h1{font-size:1.5em}.topnav .nav-links{display:none}.content{padding:0 10px}.section-body{padding:0 14px 14px}.formula-sheet{grid-template-columns:1fr}.video-row{grid-template-columns:1fr}.q-in input.vld,.q-in select.vld{min-width:70px;max-width:140px}.parcial-stats{grid-template-columns:1fr}}
 @media print{.topnav,.progress-bar,.controls,.video-row,.material-gallery,.topnav .nav-links{display:none!important}.content{margin-top:0}.section-body{display:block!important}body{background:#fff}}
@@ -3161,59 +3166,16 @@ $$x_v = -\frac{b}{2a} \qquad y_v = f(x_v)$$
   <div class="formula-card"><h4>Forma factorizada</h4>$$f(x)=a(x-x_1)(x-x_2)$$<p style="font-size:.83em;color:var(--muted)">Solo existe si \(\Delta\geq 0\)</p></div>
 </div>
 
-<h3>SVG: Parabolas tipicas</h3>
-<div class="graph">
-<svg viewBox="0 0 680 300" width="680" height="300" font-family="Space Grotesk,sans-serif">
-  <!-- Ejes parabola a>0 -->
-  <g transform="translate(10,10)">
-    <text x="155" y="15" text-anchor="middle" font-size="12" font-weight="700" fill="#0d9488">a &gt; 0: concava (min en vertice)</text>
-    <line x1="20" y1="250" x2="290" y2="250" stroke="#999" stroke-width="1.5" marker-end="url(#arr)"/>
-    <line x1="155" y1="260" x2="155" y2="20" stroke="#999" stroke-width="1.5" marker-end="url(#arr)"/>
-    <!-- parabola y = (x-155)^2 / 600 escalada, vertice (155,200), raices ~(75,250) y (235,250) -->
-    <path d="M 60,250 Q 155,70 250,250" stroke="#0d9488" stroke-width="2.5" fill="none"/>
-    <!-- vertice -->
-    <circle cx="155" cy="70" r="5" fill="#0d9488"/>
-    <line cx1="155" cy1="70" x1="155" y1="70" x2="155" y2="250" stroke="#0d9488" stroke-width="1" stroke-dasharray="5,3"/>
-    <text x="162" y="80" font-size="11" fill="#0d9488">V(xv, yv) min</text>
-    <!-- raices -->
-    <circle cx="60" cy="250" r="4" fill="#ef4444"/>
-    <circle cx="250" cy="250" r="4" fill="#ef4444"/>
-    <text x="50" y="268" font-size="10" fill="#ef4444">x1</text>
-    <text x="248" y="268" font-size="10" fill="#ef4444">x2</text>
-    <!-- ordenada al origen -->
-    <circle cx="155" cy="185" r="4" fill="#3b82f6"/>
-    <text x="158" y="183" font-size="10" fill="#3b82f6">c</text>
-    <!-- eje simetria label -->
-    <text x="160" y="245" font-size="10" fill="#0d9488" font-style="italic">eje: x=xv</text>
-  </g>
-  <!-- Ejes parabola a<0 -->
-  <g transform="translate(350,10)">
-    <text x="155" y="15" text-anchor="middle" font-size="12" font-weight="700" fill="#8b5cf6">a &lt; 0: convexa (max en vertice)</text>
-    <line x1="20" y1="150" x2="290" y2="150" stroke="#999" stroke-width="1.5"/>
-    <line x1="155" y1="260" x2="155" y2="20" stroke="#999" stroke-width="1.5"/>
-    <!-- parabola invertida -->
-    <path d="M 60,150 Q 155,20 250,150" stroke="#8b5cf6" stroke-width="2.5" fill="none"/>
-    <!-- vertice -->
-    <circle cx="155" cy="20" r="5" fill="#8b5cf6"/>
-    <line x1="155" y1="20" x2="155" y2="150" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="5,3"/>
-    <text x="162" y="32" font-size="11" fill="#8b5cf6">V max</text>
-    <!-- raices -->
-    <circle cx="60" cy="150" r="4" fill="#ef4444"/>
-    <circle cx="250" cy="150" r="4" fill="#ef4444"/>
-    <text x="50" y="165" font-size="10" fill="#ef4444">x1</text>
-    <text x="248" y="165" font-size="10" fill="#ef4444">x2</text>
-    <!-- eje simetria -->
-    <line x1="155" y1="155" x2="155" y2="260" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="5,3"/>
-    <text x="160" y="245" font-size="10" fill="#8b5cf6" font-style="italic">eje: x=xv</text>
-    <!-- Delta casos label -->
-    <text x="155" y="280" text-anchor="middle" font-size="10" fill="#666">Delta &gt; 0: 2 raices reales</text>
-  </g>
-  <defs>
-    <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#999"/>
-    </marker>
-  </defs>
-</svg>
+<h3>Parabolas tipicas (del apunte)</h3>
+<div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:16px 0">
+  <figure class="img-figura" style="flex:1;min-width:200px;max-width:300px">
+    <img src="img/cuad_parabola_concava.png" alt="Parabola concava a>0 con vertice minimo, raices x1 y x2, ordenada al origen c" loading="lazy">
+    <figcaption><small>\(a &lt; 0\): parabola convexa, vertice maximo &bull; Fuente: apunte catedra UCES 2026</small></figcaption>
+  </figure>
+  <figure class="img-figura" style="flex:1;min-width:200px;max-width:300px">
+    <img src="img/cuad_parabola_convexa.png" alt="Parabola convexa a<0 con eje de simetria y punto simetrico" loading="lazy">
+    <figcaption><small>\(a &gt; 0\): parabola concava, vertice minimo &bull; Fuente: apunte catedra UCES 2026</small></figcaption>
+  </figure>
 </div>
 
 <h3>Ejemplos resueltos</h3>
@@ -3225,6 +3187,10 @@ $$x_v = -\frac{b}{2a} \qquad y_v = f(x_v)$$
 <p><strong>Eje de simetria:</strong> \(x_v = -\dfrac{-3}{2\cdot1} = \dfrac{3}{2}\)</p>
 <p><strong>Vertice:</strong> \(y_v = f\!\left(\dfrac{3}{2}\right) = \left(\dfrac{3}{2}\right)^2 - 3\cdot\dfrac{3}{2} = \dfrac{9}{4}-\dfrac{9}{2} = -\dfrac{9}{4}\) &nbsp; Entonces \(V\!\left(\dfrac{3}{2};\, -\dfrac{9}{4}\right)\)</p>
 <p><strong>Imagen:</strong> \(a>0\) &nbsp; \(\Rightarrow\) &nbsp; \(\text{Img}f = \left[-\dfrac{9}{4};\,+\infty\right)\)</p>
+<figure class="img-figura" style="max-width:380px;margin:16px auto">
+  <img src="img/cuad_ejemplo_grafico.png" alt="Grafico de f(x)=x^2-3x del apunte: parabola concava con vertice V(3/2; -9/4) y raices en 0 y 3" loading="lazy">
+  <figcaption><small>Grafico del apunte (pag. 3): \(f(x)=x^2-3x\) con \(V\!\left(\tfrac{3}{2};\,-\tfrac{9}{4}\right)\) &bull; Fuente: apunte catedra UCES 2026</small></figcaption>
+</figure>
 </div>
 
 <div class="example-box">
@@ -3341,45 +3307,16 @@ $$x_v = -\frac{b}{2a} \qquad y_v = f(x_v)$$
 </ul>
 </div>
 
-<!-- SVG exponencial -->
-<h3>SVG: Exponencial creciente y decreciente</h3>
-<div class="graph">
-<svg viewBox="0 0 660 300" width="660" height="300" font-family="Space Grotesk,sans-serif">
-  <!-- grilla -->
-  <rect x="5" y="5" width="650" height="290" rx="10" fill="var(--card,#fff)" stroke="var(--border,#e2e8f0)" stroke-width="1"/>
-  <!-- eje x e y centrado en (200,230) escala 30px/unidad -->
-  <g id="expg">
-    <!-- ejes -->
-    <line x1="30" y1="230" x2="320" y2="230" stroke="#888" stroke-width="1.5"/>
-    <line x1="180" y1="260" x2="180" y2="30" stroke="#888" stroke-width="1.5"/>
-    <text x="325" y="234" font-size="11" fill="#888">x</text>
-    <text x="184" y="26" font-size="11" fill="#888">y</text>
-    <!-- y=2^x puntos calculados: x=-3..4, escala 40px horiz, 1 unidad y = 20px, origen y=230 -->
-    <!-- x=-3: y=0.125, pix: x=180-3*40=60, y=230-0.125*20=228 -->
-    <polyline points="60,228 100,225 140,220 180,210 220,190 260,150 300,70" stroke="#0d9488" stroke-width="2.5" fill="none"/>
-    <text x="305" y="65" font-size="11" fill="#0d9488" font-weight="700">y=2^x</text>
-    <!-- punto (0,1) -->
-    <circle cx="180" cy="210" r="4" fill="#0d9488"/>
-    <text x="185" y="207" font-size="10" fill="#0d9488">(0;1)</text>
-    <!-- asintota -->
-    <line x1="30" y1="230" x2="320" y2="230" stroke="#0d9488" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
-    <text x="40" y="226" font-size="9" fill="#0d9488" opacity="0.7">asintota y=0</text>
-    <text x="180" y="280" text-anchor="middle" font-size="11" fill="#0d9488">Creciente (a&gt;1)</text>
-  </g>
-  <!-- decreciente en parte derecha -->
-  <g transform="translate(330,0)">
-    <line x1="30" y1="230" x2="320" y2="230" stroke="#888" stroke-width="1.5"/>
-    <line x1="180" y1="260" x2="180" y2="30" stroke="#888" stroke-width="1.5"/>
-    <text x="325" y="234" font-size="11" fill="#888">x</text>
-    <!-- y=(1/2)^x = 2^(-x): x=-3..4 -->
-    <!-- x=-3: 8, pix y=230-8*20=70; x=-2:4 y=150; x=-1:2 y=190; x=0:1 y=210; x=1:0.5 y=220; x=2:0.25 y=225; x=3:0.125 y=228 -->
-    <polyline points="60,70 100,150 140,190 180,210 220,220 260,225 300,228" stroke="#8b5cf6" stroke-width="2.5" fill="none"/>
-    <text x="45" y="65" font-size="11" fill="#8b5cf6" font-weight="700">y=(1/2)^x</text>
-    <circle cx="180" cy="210" r="4" fill="#8b5cf6"/>
-    <text x="185" y="207" font-size="10" fill="#8b5cf6">(0;1)</text>
-    <text x="180" y="280" text-anchor="middle" font-size="11" fill="#8b5cf6">Decreciente (0&lt;a&lt;1)</text>
-  </g>
-</svg>
+<!-- Graficos exponencial del apunte -->
+<div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:16px 0">
+  <figure class="img-figura" style="flex:1;min-width:200px;max-width:260px">
+    <img src="img/exp_creciente.png" alt="Grafico de y=2^x: funcion exponencial creciente con a mayor que 1" loading="lazy">
+    <figcaption><small>Grafico 1: \(f(x)=2^x\), base \(a&gt;1\), creciente &bull; Fuente: apunte catedra UCES 2026</small></figcaption>
+  </figure>
+  <figure class="img-figura" style="flex:1;min-width:200px;max-width:260px">
+    <img src="img/exp_decreciente.png" alt="Grafico de y=(1/2)^x: funcion exponencial decreciente con 0 menor que a menor que 1" loading="lazy">
+    <figcaption><small>Grafico 2: \(f(x)=\left(\tfrac{1}{2}\right)^x\), base \(0&lt;a&lt;1\), decreciente &bull; Fuente: apunte catedra UCES 2026</small></figcaption>
+  </figure>
 </div>
 
 <!-- APLICACIONES -->
@@ -3482,36 +3419,16 @@ $$P = 600\cdot 1{,}03^8 \approx 760 \text{ habitantes}$$
 <p>Si \((c;\,b)\) esta en \(y=a^x\), entonces \((b;\,c)\) esta en \(y=\log_a(x)\).</p>
 </div>
 
-<!-- SVG logaritmica -->
-<div class="graph">
-<svg viewBox="0 0 500 280" width="500" height="280" font-family="Space Grotesk,sans-serif">
-  <rect x="2" y="2" width="496" height="276" rx="10" fill="var(--card,#fff)" stroke="var(--border,#e2e8f0)" stroke-width="1"/>
-  <!-- origen en (80,200), escala: 40px/unidad -->
-  <g>
-    <line x1="30" y1="200" x2="480" y2="200" stroke="#888" stroke-width="1.5"/>
-    <line x1="80" y1="260" x2="80" y2="20" stroke="#888" stroke-width="1.5"/>
-    <text x="482" y="204" font-size="10" fill="#888">x</text>
-    <text x="83" y="16" font-size="10" fill="#888">y</text>
-    <!-- log2(x): x=1->0, x=2->1, x=4->2, x=8->3 pixels: x=80+x*40, y=200-log2(x)*40 -->
-    <!-- x=0.25 -> log2=−2 -> px_x=90, py=280 | x=0.5->−1->100,240 | x=1->0->120,200 | x=2->1->160,160 | x=4->2->240,120 | x=8->3->400,80 -->
-    <polyline points="90,280 100,240 120,200 160,160 240,120 400,80" stroke="#0d9488" stroke-width="2.5" fill="none"/>
-    <text x="405" y="76" font-size="11" fill="#0d9488" font-weight="700">y=log2(x)</text>
-    <!-- (1,0) -->
-    <circle cx="120" cy="200" r="4" fill="#0d9488"/>
-    <text x="124" y="197" font-size="10" fill="#0d9488">(1;0)</text>
-    <!-- asintota vertical x=0 -->
-    <line x1="80" y1="30" x2="80" y2="260" stroke="#0d9488" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
-    <text x="83" y="255" font-size="9" fill="#0d9488" opacity="0.7">x=0</text>
-    <!-- y=x linea de simetria -->
-    <line x1="80" y1="200" x2="480" y2="-200" stroke="#f59e0b" stroke-width="1" stroke-dasharray="6,3" opacity="0.5"/>
-    <text x="300" y="65" font-size="10" fill="#f59e0b">y=x (simetria)</text>
-    <!-- exponencial 2^x: x=-3..4 px_x=80+x*40, py=200-2^x*40 -->
-    <!-- x=0->1 px(80,160); x=1->2 (120,120); x=2->4 (160,40) aprox; x=-1->0.5 (40,180); x=-2->0.25(0,190) -->
-    <polyline points="0,190 40,180 80,160 120,120 160,40" stroke="#8b5cf6" stroke-width="2" fill="none" stroke-dasharray="6,2"/>
-    <text x="162" y="36" font-size="11" fill="#8b5cf6" font-weight="700">y=2^x</text>
-    <text x="250" y="268" text-anchor="middle" font-size="10" fill="#666">Exp y Log son inversas: simetricas respecto a y=x</text>
-  </g>
-</svg>
+<!-- Graficos logaritmica del apunte -->
+<div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:16px 0">
+  <figure class="img-figura" style="flex:1;min-width:200px;max-width:280px">
+    <img src="img/log_creciente.png" alt="Grafico de y=log2(x): funcion logaritmica creciente con a mayor que 1" loading="lazy">
+    <figcaption><small>Grafico 3: \(f(x)=\log_2(x)\), base \(a&gt;1\), creciente &bull; Fuente: apunte catedra UCES 2026</small></figcaption>
+  </figure>
+  <figure class="img-figura" style="flex:1;min-width:200px;max-width:280px">
+    <img src="img/log_exp_simetria.png" alt="Grafico 5 del apunte: funciones inversas exponencial y(1/2)^x y logaritmica log_(1/2)(x), simetricas respecto a y=x" loading="lazy">
+    <figcaption><small>Grafico 5: exp y log son inversas, simetricas respecto a \(y=x\) &bull; Fuente: apunte catedra UCES 2026</small></figcaption>
+  </figure>
 </div>
 
 <h3>Ejemplos resueltos</h3>
